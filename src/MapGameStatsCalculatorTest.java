@@ -330,4 +330,18 @@ public class MapGameStatsCalculatorTest {
   }
 
   // Add more tests here!
+  @Test 
+  public void gameCountReturnsCorrcetCountForSinglePersonWithNegativeScores() {
+    //Arranges
+    String scoreData = "Nupur -10\n"
++"Nupur -5\n"
++ "Nupur -25\n";
+GameStatsCalculator calculator = new MapGameStatsCalculator(new Scanner(scoreData));
+
+//Act
+int actualCount = calculator.gameCount("Nupur");
+//assert
+assertEquals(3, actualCount);
+  }
+
 }
