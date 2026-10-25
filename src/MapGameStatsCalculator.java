@@ -31,9 +31,13 @@ public class MapGameStatsCalculator implements GameStatsCalculator {
       String name = scoreInput.next();
       int score = scoreInput.nextInt();
 
-      // TODO: add logic here to use the name and score to fill your map(s)!
+    /// TODO: add logic here to use the name and score to fill your map(s)!
+      gameCounts.put(name, gameCounts.getOrDefault(name, 0) + 1);
     }
   }
+
+   
+  
 
   /**
    * Returns the number of games a person has played.
@@ -45,6 +49,7 @@ public class MapGameStatsCalculator implements GameStatsCalculator {
   @Override
   public int gameCount(String person) {
     // TODO: remove this exception once you have implemented your method!
+    
     throw new UnsupportedOperationException("Unimplemented method 'gameCount'");
 
     // Uncomment this and have it as your first line once you remove the UnsupportedOperationException
