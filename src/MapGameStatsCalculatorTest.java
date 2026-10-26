@@ -363,5 +363,6 @@ assertEquals(3, actualCount);
   //Assert
 assertEquals(0.0, actualAvg, 0.001);
   }
+  
 
 }
