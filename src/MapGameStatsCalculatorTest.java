@@ -351,6 +351,17 @@ assertEquals(3, actualCount);
   String actual = calculator.highestScorer();
   //Assert 
   assertEquals("Baya", actual);
-}
+  }
+
+@Test public void getAverageScoreReturnsCorrectAverageForSingleGameWithZeroScore() {
+  //Arrange if they have a score of 0
+  String scoreData = "Nupur 0\n"
+  + "Baya 50\n";
+  GameStatsCalculator calculator = new MapGameStatsCalculator(new Scanner(scoreData));
+  //Act 
+  double actualAvg = calculator.getAverageScore("Nupur");
+  //Assert
+assertEquals(0.0, actualAvg, 0.001);
+  }
 
 }
