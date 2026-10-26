@@ -343,6 +343,15 @@ int actualCount = calculator.gameCount("Nupur");
 //assert
 assertEquals(3, actualCount);
   }
-
+@Test public void highestScorerReturnsFirstAlpabeticallyOnTie() {
+  //Arrange - both have the same score 99
+  String scoreData = "Nupur 99\n"
+  + "Baya 99\n";
+  GameStatsCalculator calculator = new MapGameStatsCalculator(new Scanner(scoreData));
+  //Act
+  String actual = calculator.highestScorer();
+  //Assert 
+  assertEquals("Baya", actual);
+}
 
 }
