@@ -21,6 +21,7 @@ public class MapGameStatsCalculator implements GameStatsCalculator {
   private Map<String, Integer> gameCounts;
   private Map<String, Integer> highScores;
   private Map<String, Integer> totalScores;
+  private Map<String, List<Integer>> userScoresLists;
 
   // For some waves you will need to add more private instance variables here!
 
@@ -30,6 +31,7 @@ public class MapGameStatsCalculator implements GameStatsCalculator {
     gameCounts = new HashMap<>();
     highScores = new HashMap<>();
     totalScores = new HashMap<>();
+    userScoresLists = new HashMap<>();
 
     while(scoreInput.hasNext()) {
       String name = scoreInput.next();
@@ -170,10 +172,11 @@ public class MapGameStatsCalculator implements GameStatsCalculator {
   @Override
   public List<Integer> sortedScores(String person) {
     // TODO: remove this exception once you have implemented your method!
-    throw new UnsupportedOperationException("Unimplemented method 'sortedScores'");
-
     // Uncomment this and have it as your first line once you remove the UnsupportedOperationException
-    //checkPerson(person);
+    checkPerson(person);
+    List<Integer> sortedList = new ArrayList<>(userScoresLists.get(person));
+    java.util.Collections.sort(sortedList);
+    return sortedList;
   }
   
   /**
