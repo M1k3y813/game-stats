@@ -374,5 +374,17 @@ assertEquals(0.0, actualAvg, 0.001);
     //Assert 
     assertEquals("Rohan", actualWinner);
   }
+  @Test public void sortedScoresReturnsCorrectlySortedList() {
+    //Arrange
+    String scoreData = "Xinting 85\n"
+    +"Baya 90\n"
+    +"Xinting 45\n"
+    +"Xinting 100\n";
+    GameStatsCalculator calculator = new MapGameStatsCalculator(new Scanner(scoreData));
+    //Act
+    List<Integer> actual = calculator.sortedScores("Xinting");
+    //Assert 
+    assertEquals(List.of(45,85,100), actual);
+  }
 
 }

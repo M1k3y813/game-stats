@@ -3,6 +3,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MapGameStatsCalculator implements GameStatsCalculator {
 
@@ -43,6 +45,11 @@ public class MapGameStatsCalculator implements GameStatsCalculator {
       }
       gameCounts.put(name, gameCounts.getOrDefault(name, 0) + 1);
       totalScores.put(name, totalScores.getOrDefault(name, 0) + score);
+
+      if (!userScoresLists.containsKey(name)) {
+        userScoresLists.put(name, new ArrayList<>());
+      }
+      userScoresLists.get(name).add(score);
     }
   }
 
