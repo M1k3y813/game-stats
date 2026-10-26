@@ -186,8 +186,7 @@ public class MapGameStatsCalculatorTest {
     GameStatsCalculator calculator = new MapGameStatsCalculator(new Scanner(scoreData));
 
     // Act
-    double actual = calculator.getAverageScore("Nupur");
-
+double actual = calculator.getAverageScore("Nupur");
     // Assert
     assertEquals(25.0, actual, 0.001);
   }
