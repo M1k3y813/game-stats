@@ -363,6 +363,16 @@ assertEquals(3, actualCount);
   //Assert
 assertEquals(0.0, actualAvg, 0.001);
   }
-  
+  @Test public void highestAverageScoreWorkWithAllNegativeAverages() {
+    //Arrange if Rohan avg is -15 and Nupur avg is -30
+    String scoreData = "Nupur -30\n"
+    + "Rohan -10\n"
+    + "Rohan -20\n";
+    GameStatsCalculator calculator = new MapGameStatsCalculator(new Scanner(scoreData));
+    //Act
+    String actualWinner = calculator.highestAverageScorer();
+    //Assert 
+    assertEquals("Rohan", actualWinner);
+  }
 
 }
